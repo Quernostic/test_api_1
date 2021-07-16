@@ -43,5 +43,6 @@ def create_song():
 
   except Exception as e:
     return {"message": "", "error": e}
-if __name__ == '__main__':
-    app.run()
+
+# if __name__ == '__main__':
+#     app.run()

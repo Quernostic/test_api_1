@@ -20,7 +20,18 @@ def test_get():
     error_message = "[ error log ] - from message-receiver : " + str(e)
     return {"message": error_message, "error":e}, 400
 
+@app.route('/test-get-003', methods=['GET'])
+def get_all_song():
+  try:
 
+    
+    f = open("song_datbase.txt", "r")
+    readLine=f.readlines()
+    return {"message":"test get successful", "message2":readLine,"error":""}, 200
+
+  except Exception as e:
+    error_message = "[ error log ] - from message-receiver : " + str(e)
+    return {"message": error_message, "error":e}, 400
 @app.route('/create-list', methods=['POST'])
 def create_song():
   try:
